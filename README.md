@@ -25,7 +25,7 @@ Commands:
 ```
 All tests will run against your binary and assume that an exit code greater than 0 represents an error.
 
-### Creating a config file
+### Creating a Config File
 An example local configuration for the test suite. To use:
 
 1. Copy the file config.json.example to a new file called config.json.
