@@ -6,6 +6,8 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-digitalbazaar": "^2.0.0",
     "mocha": "^5.2.0"
   },
   "scripts": {
