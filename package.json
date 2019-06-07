@@ -11,9 +11,9 @@
     "mocha": "^5.2.0"
   },
   "scripts": {
-    "report": "mocha --recursive test/vc-data-model-1.0/ -R json > implementations/report.json",
+    "report": "mocha --recursive test/latest/ -R json > implementations/report.json",
     "summary": "cd implementations && node generate.js",
-    "test": "mocha --recursive test/vc-data-model-1.0/"
+    "test": "mocha --require ./test/chai-extend.js --recursive test/latest/"
   },
   "repository": {
     "type": "git",
