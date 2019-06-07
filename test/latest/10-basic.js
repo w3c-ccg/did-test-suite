@@ -1,4 +1,8 @@
+const {expect} = require('chai');
+
+
 describe.skip('DiD Test Suite', function() {
+
   it('A DID method specification MUST further restrict the generic DID syntax by defining its own method-name and its own method-specific-id syntax.', function() {
 
   });
