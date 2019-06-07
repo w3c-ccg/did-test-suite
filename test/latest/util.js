@@ -7,7 +7,6 @@ const exec = util.promisify(require('child_process').exec);
 async function generate(file, options) {
   options = options || {};
   const filePath = path.join(__dirname, 'input', `${file}.jsonld`);
-  const date = options.date || new Date().toGMTString();
   const latestDate = `date: ${date}`;
   let args = '';
   for(const key in options.args) {
@@ -20,7 +19,7 @@ async function generate(file, options) {
     args += value;
   }
   // this cat filePath - the dash is the last pipe op
-  const httpMessage = `echo ${latestDate} | cat ${filePath} - | `;
+  const httpMessage = `cat ${filePath} - | `;
   const generate = `${options.generator} ${options.command} `;
   const {stdout, stderr} = await exec(httpMessage + generate + args);
   if(stderr) {
