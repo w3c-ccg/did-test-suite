@@ -1,7 +1,18 @@
 /* eslint-disable max-len */
 const {expect} = require('chai');
+const config = require('../../config.json');
+const util = require('./util');
 
 describe('Identifier', function() {
+  let generatorOptions = null;
+  beforeEach(function() {
+    generatorOptions = {
+      generator: config.generator,
+      command: 'c14n',
+      args: {},
+      date: new Date().toGMTString(),
+    };
+  });
 
   it('A DID method specification MUST further restrict the generic DID syntax by defining its own method-name and its own method-specific-id syntax.', function() {
     expect('did:uuid:0d2bae3e-4915-489c-bfa1-1ba14e8b43cd').to.be.a.DID;
