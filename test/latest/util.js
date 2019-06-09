@@ -3,9 +3,9 @@
 const path = require('path');
 const {exec} = require('child_process');
 
-async function generate(file, options) {
+async function generate(options) {
   options = options || {};
-  const filePath = path.join(__dirname, 'input', `${file}.httpMessage`);
+  //const filePath = path.join(__dirname, 'input', `${file}.httpMessage`);
   let args = '';
   for(const key in options.args) {
     let value = options.args[key];
@@ -17,9 +17,9 @@ async function generate(file, options) {
     args += value;
   }
   // this cat filePath - the dash is the last pipe op
-  const httpMessage = `cat ${filePath} - | `;
+  // const httpMessage = `cat ${filePath} - | `;
   const binaryOps = `${options.generator} ${options.command} `;
-  const command = httpMessage + binaryOps + args;
+  const command = binaryOps + args;
   const result = await runTest(command);
   return result;
 }
