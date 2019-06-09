@@ -1,16 +1,16 @@
     <section id='abstract'>
       <p>
 This is the most recent implementation report for the
-<a href="https://tools.ietf.org/html/draft-cavage-http-signatures">HTTP Signatures</a> specification.
+<a href="https://w3c-ccg.github.io/did-spec/">Decentralized Identifiers (DIDs) </a> specification.
       </p>
     </section>
 
     <section id='sotd'>
       <p>
 Comments regarding this document are welcome. Please file issues
-directly on <a href="https://github.com/w3c-dvcg/http-signatures-test-suite">GitHub</a>,
+directly on <a href="https://github.com/w3c-ccg/did-test-suite">GitHub</a>,
 or send them to
-<a href="mailto:public-credentials@w3.org">public-vc-comments@w3.org</a>
+<a href="mailto:public-credentials@w3.org">public-credentials@w3.org</a>
 (<a href="mailto:public-credentials@w3.org?subject=subscribe">subscribe</a>,
 <a href="https://lists.w3.org/Archives/Public/public-credentials/">archives</a>).
       </p>
@@ -22,7 +22,7 @@ or send them to
 
       <p>
 The purpose of this document is to demonstrate that there are multiple
-interoperable implementations of HTTP Signatures that are capable of generating
+interoperable implementations of Decentralized Identifiers (DIDs) that are capable of generating
 output that is conformant to the latest version.
       </p>
 
@@ -30,27 +30,24 @@ output that is conformant to the latest version.
         <h2>Testing Methodology</h2>
 
         <p>
-The testing framework for HTTP Signatures executes the
+The testing framework for Decentralized Identifiers (DIDs)  executes the
 following process for every conformance statement in the 
-<a href="https://tools.ietf.org/html/draft-cavage-http-signatures">
-Http Signatures specification</a> :
+<a href="https://github.com/w3c-dvcg/http-signatures-test-suite">
+Decentralized Identifiers (DIDs)  specification</a> :
         </p>
 
         <ol class="algorithm">
           <li>
-Take an input HTTP Message that exercises the feature and feed it to a
-developer provided HTTP Signatures binary.
+Take an input that exercises the feature and feed it to a
+developer provided Decentralized Identifiers (DIDs) binary.
           </li>
           <li>
-If the input is valid, generate a HTTP Signature that is conformant
-to options and HTTP message.
+If the input is valid, generate a DID from the input.
           </li>
           <li>
-The test suite then ensures that the generated HTTP message is
+The test suite then ensures that the generated DID is
 conformant to the feature being tested.
           </li>
         </ol>
-
       </section>
-
     </section>
