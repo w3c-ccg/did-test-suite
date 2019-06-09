@@ -43,3 +43,5 @@ exports.parseDID = parseDID;
 exports.uuid = 'did:uuid:0d2bae3e-4915-489c-bfa1-1ba14e8b43cd';
 exports.methSpec = exports.uuid + ';uuid:extra=true';
 exports.urn = 'did:urn:example:foo-bar-baz-qux?+CCResolve:cc=uk';
+// TODO https://www.chaijs.com/guide/plugins/
+// turn into a full on chai plugin

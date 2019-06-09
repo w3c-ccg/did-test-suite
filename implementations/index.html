@@ -1,174 +1,331 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Decentralized Identifiers Implementation Report 1.0</title>
-    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
-    <!--
-      === NOTA BENE ===
-      For the three scripts below, if your spec resides on dev.w3 you can check them
-      out in the same tree and use relative links so that they'll work offline,
-     -->
-    <script src='https://www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script>
-    <script type="text/javascript" class="remove">
-      var respecConfig = {
-        // specification status (e.g., WD, LCWD, NOTE, etc.). If in doubt use ED.
-        specStatus: "ED",
-
-        // the specification's short name, as in http://www.w3.org/TR/short-name/
-        shortName: "decentralized-identifiers-implementation-report",
-
-        // subtitle for the spec
-        subtitle: "Implementation Report for Decentralized Identifiers",
-
-        // if you wish the publication date to be other than today, set this
-        //publishDate:  "2017-08-03",
-
-        // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
-        // and its maturity status
-        // previousPublishDate:  "1977-03-15",
-        // previousMaturity:  "WD",
-
-        // extend the bibliography entries
-        doJsonLd: true,
-
-        github: "https://github.com/w3c-ccg/did-test-suite",
-        includePermalinks: false,
-
-        // if there a publicly available Editor's Draft, this is the link
-        edDraftURI: "https://w3c-ccg.github.io/did-test-suite/implementations/",
-
-        // if this is a LCWD, uncomment and set the end of its review period
-        // lcEnd: "2009-08-05",
-
-        // editors, add as many as you like
-        // only "name" is required
-        editors:  [
-          { name: "Manu Sporny", url: "http://manu.sporny.org/",
-            company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/" }
-        ],
-        // authors, add as many as you like.
-        // This is optional, uncomment if you have authors as well as editors.
-        // only "name" is required. Same format as editors.
-        authors:
-        [
-          { name: "Manu Sporny", url: "http://digitalbazaar.com/",
-            company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/" }
-        ],
-        // name of the WG
-        wg:           "CREDENTIALS COMMUNITY GROUP",
-
-        // URI of the public WG page
-        wgURI:        "https://www.w3.org/community/credentials/",
-
-        // name (with the @w3.org) of the public mailing to which comments are due
-        wgPublicList: "public-credentials",
-
-        // URI of the patent status for this WG, for Rec-track documents
-        // !!!! IMPORTANT !!!!
-        // This is important for Rec-track documents, do not copy a patent URI from a random
-        // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
-        // Team Contact.
-        wgPatentURI:  null,
-        maxTocLevel: 2,
-        inlineCSS: true
-      };
-    </script>
-    <style>
-.success {
-  font-weight: bold;
-  background-color: lightgreen;
-  text-align: center;
-}
-.failure {
-  font-weight: bold;
-  background-color: pink;
-  text-align: center;
-}
-.unimplemented {
-  font-weight: bold;
-  background-color: lightyellow;
-  text-align: center;
-}
-    </style>
+        <title>Decentralized Identifiers Implementation Report 1.0</title>
+        <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
+        <!--
+          === NOTA BENE ===
+          For the three scripts below, if your spec resides on dev.w3 you can check them
+          out in the same tree and use relative links so that they'll work offline,
+         -->
+        <script src='https://www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script>
+        <script type="text/javascript" class="remove">
+          var respecConfig = {
+            // specification status (e.g., WD, LCWD, NOTE, etc.). If in doubt use ED.
+            specStatus: "ED",
+    
+            // the specification's short name, as in http://www.w3.org/TR/short-name/
+            shortName: "http-signatures-implementation-report",
+    
+            // subtitle for the spec
+            subtitle: "Implementation Report for HTTP Signatures Spec",
+    
+            // if you wish the publication date to be other than today, set this
+            //publishDate:  "2017-08-03",
+    
+            // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+            // and its maturity status
+            // previousPublishDate:  "1977-03-15",
+            // previousMaturity:  "WD",
+    
+            // extend the bibliography entries
+            doJsonLd: true,
+    
+            github: "https://github.com/w3c-dvcg/http-signatures-test-suite",
+            includePermalinks: false,
+    
+            // if there a publicly available Editor's Draft, this is the link
+            edDraftURI: "https://tools.ietf.org/html/draft-cavage-http-signatures",
+    
+            // if this is a LCWD, uncomment and set the end of its review period
+            // lcEnd: "2009-08-05",
+    
+            // editors, add as many as you like
+            // only "name" is required
+            editors:  [
+              { name: "Manu Sporny", url: "http://manu.sporny.org/",
+                company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/" },
+              { name: "Andrew Jones", url: "https://github.com/aljones15",
+                company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/" }
+            ],
+            // authors, add as many as you like.
+            // This is optional, uncomment if you have authors as well as editors.
+            // only "name" is required. Same format as editors.
+            authors:
+            [
+              { name: "Manu Sporny", url: "http://digitalbazaar.com/",
+                company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/" }
+            ],
+            // name of the WG
+            wg:           "W3C Digital Verification Community Group",
+    
+            // URI of the public WG page
+            wgURI:        "https://w3c-dvcg.github.io/",
+    
+            // name (with the @w3c.org) of the public mailing to which comments are due
+            wgPublicList: "public-credentials",
+    
+            // URI of the patent status for this WG, for Rec-track documents
+            // !!!! IMPORTANT !!!!
+            // This is important for Rec-track documents, do not copy a patent URI from a random
+            // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+            // Team Contact.
+            // TODO: find patent URI
+            wgPatentURI:  "unknown",
+            maxTocLevel: 2,
+            inlineCSS: true
+          };
+        </script>
+        <style>
+    .passed {
+      font-weight: bold;
+      background-color: lightgreen;
+      text-align: center;
+    }
+    .failed {
+      font-weight: bold;
+      background-color: pink;
+      text-align: center;
+    }
+    .unimplemented {
+      font-weight: bold;
+      background-color: lightyellow;
+      text-align: center;
+    }
+        </style>
   </head>
   <body>
-    <section id='abstract'>
-      <p>
-This is the most recent implementation report for the
-<a href="https://w3c-ccg.github.io/did-spec/">Decentralized Identifiers</a> specification.
-      </p>
-    </section>
-
-    <section id='sotd'>
-      <p>
-Comments regarding this document are welcome. Please file issues
-directly on <a href="https://github.com/w3c-ccg/did-spec/issues">GitHub</a>,
-or send them to
-<a href="mailto:public-credentials@w3.org">public-vc-comments@w3.org</a>
-(<a href="mailto:public-credentials@w3.org?subject=subscribe">subscribe</a>,
-<a href="https://lists.w3.org/Archives/Public/public-credentials/">archives</a>).
-      </p>
-
-    </section>
-
-    <section class="informative">
-      <h1>Introduction</h1>
-
-      <p>
-The purpose of this document is to demonstrate that there are at least two
-interoperable implementations of processors that are capable of generating
-output that is conformant with the <a href="https://w3c-ccg.github.io/did-spec/">
-Decentralized Identifiers</a> spec.
-      </p>
-
-      <section class="informative">
-        <h2>Testing Methodology</h2>
-
-        <p>
-The testing framework for the Decentralized Identifiers executes the
-following process for every conformance statement in the
-<a href="https://w3c-ccg.github.io/did-spec/">
-Decentralized Identifiers</a> spec.:
-        </p>
-
-        <ol class="algorithm">
-          <li>
-Take an input file template that exercises the feature and feed it to a
-developer provided DID generator.
-          </li>
-          <li>
-If the input is valid, generate a DID that is conformant
-to the spec.
-          </li>
-          <li>
-The test suite then ensures that the generated DID is
-conformant to the feature being tested.
-          </li>
-        </ol>
-
-      </section>
-
-    </section>
-
+        <section id='abstract'>
+          <p>
+    This is the most recent implementation report for the
+    <a href="https://tools.ietf.org/html/draft-cavage-http-signatures">HTTP Signatures</a> specification.
+          </p>
+        </section>
+    
+        <section id='sotd'>
+          <p>
+    Comments regarding this document are welcome. Please file issues
+    directly on <a href="https://github.com/w3c-dvcg/http-signatures-test-suite">GitHub</a>,
+    or send them to
+    <a href="mailto:public-credentials@w3.org">public-vc-comments@w3.org</a>
+    (<a href="mailto:public-credentials@w3.org?subject=subscribe">subscribe</a>,
+    <a href="https://lists.w3.org/Archives/Public/public-credentials/">archives</a>).
+          </p>
+    
+        </section>
+    
+        <section class="informative">
+          <h1>Introduction</h1>
+    
+          <p>
+    The purpose of this document is to demonstrate that there are multiple
+    interoperable implementations of HTTP Signatures that are capable of generating
+    output that is conformant to the latest version.
+          </p>
+    
+          <section class="informative">
+            <h2>Testing Methodology</h2>
+    
+            <p>
+    The testing framework for HTTP Signatures executes the
+    following process for every conformance statement in the 
+    <a href="https://tools.ietf.org/html/draft-cavage-http-signatures">
+    Http Signatures specification</a> :
+            </p>
+    
+            <ol class="algorithm">
+              <li>
+    Take an input HTTP Message that exercises the feature and feed it to a
+    developer provided HTTP Signatures binary.
+              </li>
+              <li>
+    If the input is valid, generate a HTTP Signature that is conformant
+    to options and HTTP message.
+              </li>
+              <li>
+    The test suite then ensures that the generated HTTP message is
+    conformant to the feature being tested.
+              </li>
+            </ol>
+    
+          </section>
+    
+        </section>
     <section class="informative">
       <h1>Conformance Testing Results</h1>
-
       <p>
-The results of the conformance testing are shown below:
+        The results of the conformance testing are shown below:
       </p>
-
-      
-<table class="simple">
-  <thead>
-    <th width="80%">Test</th>
-<th>fake-bad</th><th>fake-good</th><th>skip</th><th>vc.js</th>
-  </thead>
-  <tbody>
-
-  </tbody>
-</table>
-
-
+            <section>
+              <h2>Identifier</h2>
+              <table class="simple">
+                <style>
+                  td.subtest {
+                    padding-left: 2rem;
+                  }
+                  td.optional {
+                    background-color: #b9b7b7;
+                  }
+                </style>
+                <thead>
+                  <th width="80%">Test</th>
+                      <th>empty</th>
+                      <th>node</th>
+                </thead>
+                <tbody>
+              <tr>
+                <td class="subtest not-optional">A DID method specification MUST further restrict the generic DID syntax by defining its own method-name and its own method-specific-id syntax.</td>
+                  <td class="passed not-optional">✓</td>
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">A method-specific parameter name MUST be prefixed by the method name as defined by the method-name rule.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">A generic DID path is identical to a URI path and MUST conform to the the path-abempty ABNF rule in [RFC3986].</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">A generic DID query is identical to a URI query and MUST conform to the the query ABNF rule in [RFC3986].</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">A generic DID fragment is identical to a URI fragment and MUST conform to the the fragment ABNF rule in [RFC3986]</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">The did: scheme name MUST be lowercase.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">(did) The method name MUST be lowercase.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              </tbody>
+              </table>
+            </section>
+            <section>
+              <h2>Document</h2>
+              <table class="simple">
+                <style>
+                  td.subtest {
+                    padding-left: 2rem;
+                  }
+                  td.optional {
+                    background-color: #b9b7b7;
+                  }
+                </style>
+                <thead>
+                  <th width="80%">Test</th>
+                      <th>empty</th>
+                      <th>node</th>
+                </thead>
+                <tbody>
+              <tr>
+                <td class="subtest not-optional">The value of the @context property MUST be one or more URIs, where the value of the first URI ishttps://www.w3.org/2019/did/v1.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">If more than one URI is provided, the URIs MUST be interpreted as an ordered set.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">DID Documents MUST include the @context property.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">A DID Document MUST have exactly one top-level context statement.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">The key for this property (context) MUST be @context.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">The value of this key MUST be at least the URL for the generic DID context: https://www.w3.org/2019/did/v1.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">Method-specific contexts MUST NOT override the terms defined in the generic DID context.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">A DID Document MUST have exactly one DID subject.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">The key for this property MUST be id.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">The value of this key MUST be a valid DID.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">However, the fully resolved DID Document MUST contain a valid id property.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">A DID Document that contains a revoked key MUST also contain or refer to the revocation information for the key (e.g., a revocation list).</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">The value of the publicKey property MUST be an array of public keys.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">Each public key MUST include id and type properties, and exactly one value property. The array of public keys MUST NOT contain duplicate entries with the same id.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">Each public key MUST include a controller property, which identifies the controller of the corresponding private key.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">The value property of a public key MUST be exactly one of publicKeyPem, publicKeyJwk, publicKeyHex, publicKeyBase64, publicKeyBase58, publicKeyMultibase, depending on the format and encoding of the public key.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">Each service endpoint MUSTmust include id, type, and serviceEndpoint properties, and MAY include additional properties.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">The value of the serviceEndpoint property MUST be a JSON-LD object or a valid URI conforming to [RFC3986] and normalized according to the rules in section 6 of [RFC3986] and to any normalization rules in its applicable URI scheme specification.</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">A DID Document MUST be a single JSON object conforming to [RFC8259].</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              </tbody>
+              </table>
+            </section>
     </section>
   </body>
 </html>

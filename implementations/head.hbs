@@ -1,0 +1,92 @@
+    <title>Decentralized Identifiers Implementation Report 1.0</title>
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
+    <!--
+      === NOTA BENE ===
+      For the three scripts below, if your spec resides on dev.w3 you can check them
+      out in the same tree and use relative links so that they'll work offline,
+     -->
+    <script src='https://www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script>
+    <script type="text/javascript" class="remove">
+      var respecConfig = {
+        // specification status (e.g., WD, LCWD, NOTE, etc.). If in doubt use ED.
+        specStatus: "ED",
+
+        // the specification's short name, as in http://www.w3.org/TR/short-name/
+        shortName: "http-signatures-implementation-report",
+
+        // subtitle for the spec
+        subtitle: "Implementation Report for HTTP Signatures Spec",
+
+        // if you wish the publication date to be other than today, set this
+        //publishDate:  "2017-08-03",
+
+        // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+        // and its maturity status
+        // previousPublishDate:  "1977-03-15",
+        // previousMaturity:  "WD",
+
+        // extend the bibliography entries
+        doJsonLd: true,
+
+        github: "https://github.com/w3c-dvcg/http-signatures-test-suite",
+        includePermalinks: false,
+
+        // if there a publicly available Editor's Draft, this is the link
+        edDraftURI: "https://tools.ietf.org/html/draft-cavage-http-signatures",
+
+        // if this is a LCWD, uncomment and set the end of its review period
+        // lcEnd: "2009-08-05",
+
+        // editors, add as many as you like
+        // only "name" is required
+        editors:  [
+          { name: "Manu Sporny", url: "http://manu.sporny.org/",
+            company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/" },
+          { name: "Andrew Jones", url: "https://github.com/aljones15",
+            company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/" }
+        ],
+        // authors, add as many as you like.
+        // This is optional, uncomment if you have authors as well as editors.
+        // only "name" is required. Same format as editors.
+        authors:
+        [
+          { name: "Manu Sporny", url: "http://digitalbazaar.com/",
+            company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/" }
+        ],
+        // name of the WG
+        wg:           "W3C Digital Verification Community Group",
+
+        // URI of the public WG page
+        wgURI:        "https://w3c-dvcg.github.io/",
+
+        // name (with the @w3c.org) of the public mailing to which comments are due
+        wgPublicList: "public-credentials",
+
+        // URI of the patent status for this WG, for Rec-track documents
+        // !!!! IMPORTANT !!!!
+        // This is important for Rec-track documents, do not copy a patent URI from a random
+        // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+        // Team Contact.
+        // TODO: find patent URI
+        wgPatentURI:  "unknown",
+        maxTocLevel: 2,
+        inlineCSS: true
+      };
+    </script>
+    <style>
+.passed {
+  font-weight: bold;
+  background-color: lightgreen;
+  text-align: center;
+}
+.failed {
+  font-weight: bold;
+  background-color: pink;
+  text-align: center;
+}
+.unimplemented {
+  font-weight: bold;
+  background-color: lightyellow;
+  text-align: center;
+}
+    </style>
