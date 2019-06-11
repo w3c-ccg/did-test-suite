@@ -58,20 +58,30 @@ describe('Document', function() {
     throw new Error('Not Implemented');
 
   });
-  it('Each service endpoint MUST include id, type, and serviceEndpoint properties, and MAY include additional properties.', async function() {
-    throw new Error('Not Implemented');
-
-  });
-  it('The value of the serviceEndpoint property MUST be a JSON-LD object or a valid URI conforming to [RFC3986] and normalized according to the rules in section 6 of [RFC3986] and to any normalization rules in its applicable URI scheme specification.', async function() {
-    throw new Error('Not Implemented');
-
-  });
   it('A DID Document MUST be a single JSON object conforming to [RFC8259].', async function() {
-    throw new Error('Not Implemented');
     await util.generate('valid.jsonld', generatorOptions);
   });
 
   describe('optional ', function() {
+    describe(' A DID Document MAY include an authentication property ', function() {
+      it('The value of the authentication property should be an array of verification methods', async function() {
+        await util.generate('authentication.jsonld', generatorOptions);
+      });
+      it('Each verification method MAY be embedded or referenced', async function() {
+        await util.generate('authentication.jsonld', generatorOptions);
+      });
+    });
+    describe(' A DID Document MAY include a service property ', function() {
+      it('The value of the service property should be an array of service endpoint', async function() {
+        await util.generate('service.jsonld', generatorOptions);
+      });
+      it('Each service endpoint must include id, type, and serviceEndpoint properties, and MAY include additional properties', async function() {
+        await util.generate('service.jsonld', generatorOptions);
+      });
+      it('The value of the serviceEndpoint property MUST be a JSON-LD object or a valid URI', async function() {
+        await util.generate('service.jsonld', generatorOptions);
+      });
+    });
     describe(' A DID Document MAY include a publicKey property ', function() {
       it(' If a public key does not exist in the DID Document, it MUST be assumed the key has been revoked or is invalid.', async function() {
         await util.generate('valid.jsonld', generatorOptions);
