@@ -65,7 +65,7 @@ describe('Document', function() {
     throw new Error('Not Implemented');
 
   });
-  it('Each service endpoint MUSTmust include id, type, and serviceEndpoint properties, and MAY include additional properties.', async function() {
+  it('Each service endpoint MUST include id, type, and serviceEndpoint properties, and MAY include additional properties.', async function() {
     throw new Error('Not Implemented');
 
   });
