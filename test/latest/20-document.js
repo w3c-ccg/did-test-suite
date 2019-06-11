@@ -1,7 +1,21 @@
 /* eslint-disable max-len */
+const {expect} = require('chai');
+const config = require('../../config.json');
+const util = require('./util');
 
 describe('Document', function() {
-  it('The value of the @context property MUST be one or more URIs, where the value of the first URI ishttps://www.w3.org/2019/did/v1.', async function() {
+  let generatorOptions = null;
+  beforeEach(function() {
+    generatorOptions = {
+      generator: config.generator,
+      command: 'validate',
+      args: {
+        did: true,
+      },
+    };
+  });
+
+  it('The value of the @context property MUST be one or more URIs, where the value of the first URI is https://www.w3.org/2019/did/v1.', async function() {
     throw new Error('Not Implemented');
 
   });
