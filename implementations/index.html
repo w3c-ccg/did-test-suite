@@ -171,39 +171,44 @@
                 </thead>
                 <tbody>
               <tr>
+                <td class="subtest not-optional">The did: scheme name MUST be lowercase.</td>
+                  <td class="passed not-optional">✓</td>
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
+                <td class="subtest not-optional">(did) The method name MUST be lowercase.</td>
+                  <td class="passed not-optional">✓</td>
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
                 <td class="subtest not-optional">A DID method specification MUST further restrict the generic DID syntax by defining its own method-name and its own method-specific-id syntax.</td>
                   <td class="passed not-optional">✓</td>
                   <td class="passed not-optional">✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional">A method-specific parameter name MUST be prefixed by the method name as defined by the method-name rule.</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
+                  <td class="passed not-optional">✓</td>
+                  <td class="passed not-optional">✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional">A generic DID path is identical to a URI path and MUST conform to the the path-abempty ABNF rule in [RFC3986].</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
+                  <td class="passed not-optional">✓</td>
+                  <td class="passed not-optional">✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional">A generic DID query is identical to a URI query and MUST conform to the the query ABNF rule in [RFC3986].</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
+                  <td class="passed not-optional">✓</td>
+                  <td class="passed not-optional">✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional">A generic DID fragment is identical to a URI fragment and MUST conform to the the fragment ABNF rule in [RFC3986]</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
+                  <td class="passed not-optional">✓</td>
+                  <td class="passed not-optional">✓</td>
               </tr>
               <tr>
-                <td class="subtest not-optional">The did: scheme name MUST be lowercase.</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-              </tr>
-              <tr>
-                <td class="subtest not-optional">(did) The method name MUST be lowercase.</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
+                <td class="subtest optional">optional Method-specific parameter names MAY be combined with generic parameter names in any order.</td>
+                  <td class="passed optional">✓</td>
+                  <td class="passed optional">✓</td>
               </tr>
               </tbody>
               </table>
@@ -226,19 +231,19 @@
                 </thead>
                 <tbody>
               <tr>
-                <td class="subtest not-optional">The value of the @context property MUST be one or more URIs, where the value of the first URI ishttps://www.w3.org/2019/did/v1.</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
+                <td class="subtest not-optional">The value of the @context property MUST be one or more URIs, where the value of the first URI is https://www.w3.org/2019/did/v1.</td>
+                  <td class="passed not-optional">✓</td>
+                  <td class="passed not-optional">✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional">If more than one URI is provided, the URIs MUST be interpreted as an ordered set.</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
+                  <td class="passed not-optional">✓</td>
+                  <td class="passed not-optional">✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional">DID Documents MUST include the @context property.</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
+                  <td class="passed not-optional">✓</td>
+                  <td class="passed not-optional">✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional">A DID Document MUST have exactly one top-level context statement.</td>
@@ -247,13 +252,13 @@
               </tr>
               <tr>
                 <td class="subtest not-optional">The key for this property (context) MUST be @context.</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
+                  <td class="passed not-optional">✓</td>
+                  <td class="passed not-optional">✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional">The value of this key MUST be at least the URL for the generic DID context: https://www.w3.org/2019/did/v1.</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
+                  <td class="passed not-optional">✓</td>
+                  <td class="passed not-optional">✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional">Method-specific contexts MUST NOT override the terms defined in the generic DID context.</td>
@@ -262,18 +267,18 @@
               </tr>
               <tr>
                 <td class="subtest not-optional">A DID Document MUST have exactly one DID subject.</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
+                  <td class="passed not-optional">✓</td>
+                  <td class="passed not-optional">✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional">The key for this property MUST be id.</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
+                  <td class="passed not-optional">✓</td>
+                  <td class="passed not-optional">✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional">The value of this key MUST be a valid DID.</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
+                  <td class="passed not-optional">✓</td>
+                  <td class="passed not-optional">✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional">However, the fully resolved DID Document MUST contain a valid id property.</td>
@@ -281,32 +286,7 @@
                   <td class="failed not-optional">❌</td>
               </tr>
               <tr>
-                <td class="subtest not-optional">A DID Document that contains a revoked key MUST also contain or refer to the revocation information for the key (e.g., a revocation list).</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-              </tr>
-              <tr>
-                <td class="subtest not-optional">The value of the publicKey property MUST be an array of public keys.</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-              </tr>
-              <tr>
-                <td class="subtest not-optional">Each public key MUST include id and type properties, and exactly one value property. The array of public keys MUST NOT contain duplicate entries with the same id.</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-              </tr>
-              <tr>
-                <td class="subtest not-optional">Each public key MUST include a controller property, which identifies the controller of the corresponding private key.</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-              </tr>
-              <tr>
-                <td class="subtest not-optional">The value property of a public key MUST be exactly one of publicKeyPem, publicKeyJwk, publicKeyHex, publicKeyBase64, publicKeyBase58, publicKeyMultibase, depending on the format and encoding of the public key.</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-              </tr>
-              <tr>
-                <td class="subtest not-optional">Each service endpoint MUSTmust include id, type, and serviceEndpoint properties, and MAY include additional properties.</td>
+                <td class="subtest not-optional">Each service endpoint MUST include id, type, and serviceEndpoint properties, and MAY include additional properties.</td>
                   <td class="failed not-optional">❌</td>
                   <td class="failed not-optional">❌</td>
               </tr>
@@ -319,6 +299,36 @@
                 <td class="subtest not-optional">A DID Document MUST be a single JSON object conforming to [RFC8259].</td>
                   <td class="failed not-optional">❌</td>
                   <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest optional">optional A DID Document MAY include a publicKey property If a public key does not exist in the DID Document, it MUST be assumed the key has been revoked or is invalid.</td>
+                  <td class="failed optional">❌</td>
+                  <td class="failed optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest optional">optional A DID Document MAY include a publicKey property A DID Document that contains a revoked key MUST also contain or refer to the revocation information for the key (e.g., a revocation list).</td>
+                  <td class="failed optional">❌</td>
+                  <td class="failed optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest optional">optional A DID Document MAY include a publicKey property The value of the publicKey property MUST be an array of public keys.</td>
+                  <td class="failed optional">❌</td>
+                  <td class="failed optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest optional">optional A DID Document MAY include a publicKey property Each public key MUST include id and type properties, and exactly one value property. The array of public keys MUST NOT contain duplicate entries with the same id.</td>
+                  <td class="failed optional">❌</td>
+                  <td class="failed optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest optional">optional A DID Document MAY include a publicKey property Each public key MUST include a controller property, which identifies the controller of the corresponding private key.</td>
+                  <td class="failed optional">❌</td>
+                  <td class="failed optional">❌</td>
+              </tr>
+              <tr>
+                <td class="subtest optional">optional A DID Document MAY include a publicKey property The value property of a public key MUST be exactly one of publicKeyPem, publicKeyJwk, publicKeyHex, publicKeyBase64, publicKeyBase58, publicKeyMultibase, depending on the format and encoding of the public key.</td>
+                  <td class="failed optional">❌</td>
+                  <td class="failed optional">❌</td>
               </tr>
               </tbody>
               </table>

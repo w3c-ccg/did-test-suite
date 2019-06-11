@@ -18,7 +18,7 @@ describe('Identifier', function() {
   it('The did: scheme name MUST be lowercase.', async function() {
     let error = null;
     try {
-      await util.generate('uppercase.did', generatorOptions);
+      await util.generate('lowercase.did', generatorOptions);
     } catch(e) {
       error = e;
     }

@@ -1,13 +1,33 @@
 {
   "Identifier": [
     {
+      "fullTitle": "The did: scheme name MUST be lowercase.",
+      "optional": false,
+      "title": "The did: scheme name MUST be lowercase.",
+      "pending": false,
+      "state": "passed",
+      "duration": 246,
+      "speed": "slow",
+      "errors": ""
+    },
+    {
+      "fullTitle": "(did) The method name MUST be lowercase.",
+      "optional": false,
+      "title": "(did) The method name MUST be lowercase.",
+      "pending": false,
+      "state": "passed",
+      "duration": 243,
+      "speed": "slow",
+      "errors": ""
+    },
+    {
       "fullTitle": "A DID method specification MUST further restrict the generic DID syntax by defining its own method-name and its own method-specific-id syntax.",
       "optional": false,
       "title": "A DID method specification MUST further restrict the generic DID syntax by defining its own method-name and its own method-specific-id syntax.",
       "pending": false,
       "state": "passed",
-      "duration": 2,
-      "speed": "fast",
+      "duration": 238,
+      "speed": "slow",
       "errors": ""
     },
     {
@@ -15,83 +35,82 @@
       "optional": false,
       "title": "A method-specific parameter name MUST be prefixed by the method name as defined by the method-name rule.",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 240,
+      "speed": "slow",
+      "errors": ""
     },
     {
       "fullTitle": "A generic DID path is identical to a URI path and MUST conform to the the path-abempty ABNF rule in [RFC3986].",
       "optional": false,
       "title": "A generic DID path is identical to a URI path and MUST conform to the the path-abempty ABNF rule in [RFC3986].",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 239,
+      "speed": "slow",
+      "errors": ""
     },
     {
       "fullTitle": "A generic DID query is identical to a URI query and MUST conform to the the query ABNF rule in [RFC3986].",
       "optional": false,
       "title": "A generic DID query is identical to a URI query and MUST conform to the the query ABNF rule in [RFC3986].",
       "pending": false,
-      "state": "failed",
-      "duration": 1,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 240,
+      "speed": "slow",
+      "errors": ""
     },
     {
       "fullTitle": "A generic DID fragment is identical to a URI fragment and MUST conform to the the fragment ABNF rule in [RFC3986]",
       "optional": false,
       "title": "A generic DID fragment is identical to a URI fragment and MUST conform to the the fragment ABNF rule in [RFC3986]",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 236,
+      "speed": "slow",
+      "errors": ""
     },
     {
-      "fullTitle": "The did: scheme name MUST be lowercase.",
-      "optional": false,
-      "title": "The did: scheme name MUST be lowercase.",
+      "fullTitle": "optional Method-specific parameter names MAY be combined with generic parameter names in any order.",
+      "optional": true,
+      "title": "optional Method-specific parameter names MAY be combined with generic parameter names in any order.",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
-    },
-    {
-      "fullTitle": "(did) The method name MUST be lowercase.",
-      "optional": false,
-      "title": "(did) The method name MUST be lowercase.",
-      "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 244,
+      "speed": "slow",
+      "errors": ""
     }
   ],
   "Document": [
     {
-      "fullTitle": "The value of the @context property MUST be one or more URIs, where the value of the first URI ishttps://www.w3.org/2019/did/v1.",
+      "fullTitle": "The value of the @context property MUST be one or more URIs, where the value of the first URI is https://www.w3.org/2019/did/v1.",
       "optional": false,
-      "title": "The value of the @context property MUST be one or more URIs, where the value of the first URI ishttps://www.w3.org/2019/did/v1.",
+      "title": "The value of the @context property MUST be one or more URIs, where the value of the first URI is https://www.w3.org/2019/did/v1.",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 239,
+      "speed": "slow",
+      "errors": ""
     },
     {
       "fullTitle": "If more than one URI is provided, the URIs MUST be interpreted as an ordered set.",
       "optional": false,
       "title": "If more than one URI is provided, the URIs MUST be interpreted as an ordered set.",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 238,
+      "speed": "slow",
+      "errors": ""
     },
     {
       "fullTitle": "DID Documents MUST include the @context property.",
       "optional": false,
       "title": "DID Documents MUST include the @context property.",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 245,
+      "speed": "slow",
+      "errors": ""
     },
     {
       "fullTitle": "A DID Document MUST have exactly one top-level context statement.",
@@ -107,18 +126,20 @@
       "optional": false,
       "title": "The key for this property (context) MUST be @context.",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 239,
+      "speed": "slow",
+      "errors": ""
     },
     {
       "fullTitle": "The value of this key MUST be at least the URL for the generic DID context: https://www.w3.org/2019/did/v1.",
       "optional": false,
       "title": "The value of this key MUST be at least the URL for the generic DID context: https://www.w3.org/2019/did/v1.",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 240,
+      "speed": "slow",
+      "errors": ""
     },
     {
       "fullTitle": "Method-specific contexts MUST NOT override the terms defined in the generic DID context.",
@@ -134,27 +155,30 @@
       "optional": false,
       "title": "A DID Document MUST have exactly one DID subject.",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 239,
+      "speed": "slow",
+      "errors": ""
     },
     {
       "fullTitle": "The key for this property MUST be id.",
       "optional": false,
       "title": "The key for this property MUST be id.",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 240,
+      "speed": "slow",
+      "errors": ""
     },
     {
       "fullTitle": "The value of this key MUST be a valid DID.",
       "optional": false,
       "title": "The value of this key MUST be a valid DID.",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 238,
+      "speed": "slow",
+      "errors": ""
     },
     {
       "fullTitle": "However, the fully resolved DID Document MUST contain a valid id property.",
@@ -166,54 +190,9 @@
       "errors": "Not Implemented"
     },
     {
-      "fullTitle": "A DID Document that contains a revoked key MUST also contain or refer to the revocation information for the key (e.g., a revocation list).",
+      "fullTitle": "Each service endpoint MUST include id, type, and serviceEndpoint properties, and MAY include additional properties.",
       "optional": false,
-      "title": "A DID Document that contains a revoked key MUST also contain or refer to the revocation information for the key (e.g., a revocation list).",
-      "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
-    },
-    {
-      "fullTitle": "The value of the publicKey property MUST be an array of public keys.",
-      "optional": false,
-      "title": "The value of the publicKey property MUST be an array of public keys.",
-      "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
-    },
-    {
-      "fullTitle": "Each public key MUST include id and type properties, and exactly one value property. The array of public keys MUST NOT contain duplicate entries with the same id.",
-      "optional": false,
-      "title": "Each public key MUST include id and type properties, and exactly one value property. The array of public keys MUST NOT contain duplicate entries with the same id.",
-      "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
-    },
-    {
-      "fullTitle": "Each public key MUST include a controller property, which identifies the controller of the corresponding private key.",
-      "optional": false,
-      "title": "Each public key MUST include a controller property, which identifies the controller of the corresponding private key.",
-      "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
-    },
-    {
-      "fullTitle": "The value property of a public key MUST be exactly one of publicKeyPem, publicKeyJwk, publicKeyHex, publicKeyBase64, publicKeyBase58, publicKeyMultibase, depending on the format and encoding of the public key.",
-      "optional": false,
-      "title": "The value property of a public key MUST be exactly one of publicKeyPem, publicKeyJwk, publicKeyHex, publicKeyBase64, publicKeyBase58, publicKeyMultibase, depending on the format and encoding of the public key.",
-      "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
-    },
-    {
-      "fullTitle": "Each service endpoint MUSTmust include id, type, and serviceEndpoint properties, and MAY include additional properties.",
-      "optional": false,
-      "title": "Each service endpoint MUSTmust include id, type, and serviceEndpoint properties, and MAY include additional properties.",
+      "title": "Each service endpoint MUST include id, type, and serviceEndpoint properties, and MAY include additional properties.",
       "pending": false,
       "state": "failed",
       "duration": 0,
@@ -232,6 +211,60 @@
       "fullTitle": "A DID Document MUST be a single JSON object conforming to [RFC8259].",
       "optional": false,
       "title": "A DID Document MUST be a single JSON object conforming to [RFC8259].",
+      "pending": false,
+      "state": "failed",
+      "duration": 0,
+      "errors": "Not Implemented"
+    },
+    {
+      "fullTitle": "optional A DID Document MAY include a publicKey property If a public key does not exist in the DID Document, it MUST be assumed the key has been revoked or is invalid.",
+      "optional": true,
+      "title": " If a public key does not exist in the DID Document, it MUST be assumed the key has been revoked or is invalid.",
+      "pending": false,
+      "state": "failed",
+      "duration": 0,
+      "errors": "Not Implemented"
+    },
+    {
+      "fullTitle": "optional A DID Document MAY include a publicKey property A DID Document that contains a revoked key MUST also contain or refer to the revocation information for the key (e.g., a revocation list).",
+      "optional": true,
+      "title": " A DID Document that contains a revoked key MUST also contain or refer to the revocation information for the key (e.g., a revocation list).",
+      "pending": false,
+      "state": "failed",
+      "duration": 1,
+      "errors": "Not Implemented"
+    },
+    {
+      "fullTitle": "optional A DID Document MAY include a publicKey property The value of the publicKey property MUST be an array of public keys.",
+      "optional": true,
+      "title": " The value of the publicKey property MUST be an array of public keys.",
+      "pending": false,
+      "state": "failed",
+      "duration": 0,
+      "errors": "Not Implemented"
+    },
+    {
+      "fullTitle": "optional A DID Document MAY include a publicKey property Each public key MUST include id and type properties, and exactly one value property. The array of public keys MUST NOT contain duplicate entries with the same id.",
+      "optional": true,
+      "title": " Each public key MUST include id and type properties, and exactly one value property. The array of public keys MUST NOT contain duplicate entries with the same id.",
+      "pending": false,
+      "state": "failed",
+      "duration": 0,
+      "errors": "Not Implemented"
+    },
+    {
+      "fullTitle": "optional A DID Document MAY include a publicKey property Each public key MUST include a controller property, which identifies the controller of the corresponding private key.",
+      "optional": true,
+      "title": " Each public key MUST include a controller property, which identifies the controller of the corresponding private key.",
+      "pending": false,
+      "state": "failed",
+      "duration": 0,
+      "errors": "Not Implemented"
+    },
+    {
+      "fullTitle": "optional A DID Document MAY include a publicKey property The value property of a public key MUST be exactly one of publicKeyPem, publicKeyJwk, publicKeyHex, publicKeyBase64, publicKeyBase58, publicKeyMultibase, depending on the format and encoding of the public key.",
+      "optional": true,
+      "title": " The value property of a public key MUST be exactly one of publicKeyPem, publicKeyJwk, publicKeyHex, publicKeyBase64, publicKeyBase58, publicKeyMultibase, depending on the format and encoding of the public key.",
       "pending": false,
       "state": "failed",
       "duration": 0,
