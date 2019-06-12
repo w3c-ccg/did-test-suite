@@ -11,6 +11,7 @@ describe('Document', function() {
       command: 'validate',
       args: {
         document: true,
+        contexts: '../../../did-test-suite/test/contexts/base.json'
       },
     };
   });
@@ -36,8 +37,14 @@ describe('Document', function() {
     await util.generate('valid.jsonld', generatorOptions);
   });
   it('Method-specific contexts MUST NOT override the terms defined in the generic DID context.', async function() {
-    throw new Error('Not Implemented');
-
+    // https://w3c-ccg.github.io/did-spec/contexts/did-v1.jsonld
+    let error = null;
+    try {
+      await util.generate('overwrite-parent-context.jsonld', generatorOptions);
+    } catch(e) {
+      error = e;
+    }
+    expect(error, 'Expected an Error to be Thrown').to.not.be.null;
   });
   it('A DID Document MUST have exactly one DID subject.', async function() {
     let error = null;

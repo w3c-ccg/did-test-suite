@@ -2,7 +2,6 @@
   "@context": ["https://www.w3.org/2019/did/v1"],
   "id": "did:uuid:0d2bae3e-4915-489c-bfa1-1ba14e8b43cd",
   "publicKey": [{
-    "@context": ["https://w3id.org/security/v1"],
     "controller": "did:example:123456789abcdefghi",
     "id": "did:example:123456789abcdefghi#keys-1",
     "type": "Ed25519VerificationKey2018",
