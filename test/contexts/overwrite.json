@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "id": "@id",
+    "type": "@type",
+    "dc": "http://purl.org/dc/terms/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "sec": "https://w3id.org/security#",
+    "didv": "https://w3id.org/did#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "created": {"@id": "dc:created", "@type": "sec:AuthenticationSuite"},
+    "publicKey": {"@id": "sec:publicKey", "@type": "@id"}
+  }
+}
