@@ -19,16 +19,17 @@ describe('Document', function() {
   it('The value of the @context property MUST be one or more URIs, where the value of the first URI is https://www.w3.org/2019/did/v1.', async function() {
     await util.generate('valid.jsonld', generatorOptions);
   });
+
   it('If more than one URI is provided, the URIs MUST be interpreted as an ordered set.', async function() {
     await util.generate('multiple-contexts.jsonld', generatorOptions);
-
   });
+
   it('DID Documents MUST include the @context property.', async function() {
     await util.generate('valid.jsonld', generatorOptions);
   });
+
   it('A DID Document MUST have exactly one top-level context statement.', async function() {
     throw new Error('Not Implemented');
-
   });
   it('The key for this property (context) MUST be @context.', async function() {
     await util.generate('valid.jsonld', generatorOptions);
@@ -38,6 +39,8 @@ describe('Document', function() {
   });
   it('Method-specific contexts MUST NOT override the terms defined in the generic DID context.', async function() {
     // https://w3c-ccg.github.io/did-spec/contexts/did-v1.jsonld
+    generatorOptions.args.contexts = '"../../../did-test-suite/test/contexts/base.json ' +
+      '../../../did-test-suite/test/contexts/overwrite.json"';
     let error = null;
     try {
       await util.generate('overwrite-parent-context.jsonld', generatorOptions);
