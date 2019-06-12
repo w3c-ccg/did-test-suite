@@ -6,7 +6,7 @@
       "title": "The did: scheme name MUST be lowercase.",
       "pending": false,
       "state": "passed",
-      "duration": 246,
+      "duration": 289,
       "speed": "slow",
       "errors": ""
     },
@@ -16,7 +16,7 @@
       "title": "(did) The method name MUST be lowercase.",
       "pending": false,
       "state": "passed",
-      "duration": 243,
+      "duration": 244,
       "speed": "slow",
       "errors": ""
     },
@@ -26,7 +26,7 @@
       "title": "A DID method specification MUST further restrict the generic DID syntax by defining its own method-name and its own method-specific-id syntax.",
       "pending": false,
       "state": "passed",
-      "duration": 238,
+      "duration": 253,
       "speed": "slow",
       "errors": ""
     },
@@ -36,7 +36,7 @@
       "title": "A method-specific parameter name MUST be prefixed by the method name as defined by the method-name rule.",
       "pending": false,
       "state": "passed",
-      "duration": 240,
+      "duration": 249,
       "speed": "slow",
       "errors": ""
     },
@@ -46,7 +46,7 @@
       "title": "A generic DID path is identical to a URI path and MUST conform to the the path-abempty ABNF rule in [RFC3986].",
       "pending": false,
       "state": "passed",
-      "duration": 239,
+      "duration": 238,
       "speed": "slow",
       "errors": ""
     },
@@ -56,7 +56,7 @@
       "title": "A generic DID query is identical to a URI query and MUST conform to the the query ABNF rule in [RFC3986].",
       "pending": false,
       "state": "passed",
-      "duration": 240,
+      "duration": 238,
       "speed": "slow",
       "errors": ""
     },
@@ -66,7 +66,7 @@
       "title": "A generic DID fragment is identical to a URI fragment and MUST conform to the the fragment ABNF rule in [RFC3986]",
       "pending": false,
       "state": "passed",
-      "duration": 236,
+      "duration": 238,
       "speed": "slow",
       "errors": ""
     },
@@ -76,7 +76,7 @@
       "title": "optional Method-specific parameter names MAY be combined with generic parameter names in any order.",
       "pending": false,
       "state": "passed",
-      "duration": 244,
+      "duration": 241,
       "speed": "slow",
       "errors": ""
     }
@@ -88,7 +88,7 @@
       "title": "The value of the @context property MUST be one or more URIs, where the value of the first URI is https://www.w3.org/2019/did/v1.",
       "pending": false,
       "state": "passed",
-      "duration": 239,
+      "duration": 246,
       "speed": "slow",
       "errors": ""
     },
@@ -98,7 +98,7 @@
       "title": "If more than one URI is provided, the URIs MUST be interpreted as an ordered set.",
       "pending": false,
       "state": "passed",
-      "duration": 238,
+      "duration": 240,
       "speed": "slow",
       "errors": ""
     },
@@ -108,7 +108,7 @@
       "title": "DID Documents MUST include the @context property.",
       "pending": false,
       "state": "passed",
-      "duration": 245,
+      "duration": 246,
       "speed": "slow",
       "errors": ""
     },
@@ -127,7 +127,7 @@
       "title": "The key for this property (context) MUST be @context.",
       "pending": false,
       "state": "passed",
-      "duration": 239,
+      "duration": 243,
       "speed": "slow",
       "errors": ""
     },
@@ -137,7 +137,7 @@
       "title": "The value of this key MUST be at least the URL for the generic DID context: https://www.w3.org/2019/did/v1.",
       "pending": false,
       "state": "passed",
-      "duration": 240,
+      "duration": 244,
       "speed": "slow",
       "errors": ""
     },
@@ -146,9 +146,10 @@
       "optional": false,
       "title": "Method-specific contexts MUST NOT override the terms defined in the generic DID context.",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 246,
+      "speed": "slow",
+      "errors": ""
     },
     {
       "fullTitle": "A DID Document MUST have exactly one DID subject.",
@@ -156,7 +157,7 @@
       "title": "A DID Document MUST have exactly one DID subject.",
       "pending": false,
       "state": "passed",
-      "duration": 239,
+      "duration": 240,
       "speed": "slow",
       "errors": ""
     },
@@ -166,7 +167,7 @@
       "title": "The key for this property MUST be id.",
       "pending": false,
       "state": "passed",
-      "duration": 240,
+      "duration": 259,
       "speed": "slow",
       "errors": ""
     },
@@ -176,7 +177,7 @@
       "title": "The value of this key MUST be a valid DID.",
       "pending": false,
       "state": "passed",
-      "duration": 238,
+      "duration": 247,
       "speed": "slow",
       "errors": ""
     },
@@ -190,40 +191,74 @@
       "errors": "Not Implemented"
     },
     {
-      "fullTitle": "Each service endpoint MUST include id, type, and serviceEndpoint properties, and MAY include additional properties.",
-      "optional": false,
-      "title": "Each service endpoint MUST include id, type, and serviceEndpoint properties, and MAY include additional properties.",
-      "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
-    },
-    {
-      "fullTitle": "The value of the serviceEndpoint property MUST be a JSON-LD object or a valid URI conforming to [RFC3986] and normalized according to the rules in section 6 of [RFC3986] and to any normalization rules in its applicable URI scheme specification.",
-      "optional": false,
-      "title": "The value of the serviceEndpoint property MUST be a JSON-LD object or a valid URI conforming to [RFC3986] and normalized according to the rules in section 6 of [RFC3986] and to any normalization rules in its applicable URI scheme specification.",
-      "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
-    },
-    {
       "fullTitle": "A DID Document MUST be a single JSON object conforming to [RFC8259].",
       "optional": false,
       "title": "A DID Document MUST be a single JSON object conforming to [RFC8259].",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 245,
+      "speed": "slow",
+      "errors": ""
+    },
+    {
+      "fullTitle": "optional A DID Document MAY include an authentication propertyThe value of the authentication property should be an array of verification methods",
+      "optional": true,
+      "title": "The value of the authentication property should be an array of verification methods",
+      "pending": false,
+      "state": "passed",
+      "duration": 247,
+      "speed": "slow",
+      "errors": ""
+    },
+    {
+      "fullTitle": "optional A DID Document MAY include an authentication propertyEach verification method MAY be embedded or referenced",
+      "optional": true,
+      "title": "Each verification method MAY be embedded or referenced",
+      "pending": false,
+      "state": "passed",
+      "duration": 244,
+      "speed": "slow",
+      "errors": ""
+    },
+    {
+      "fullTitle": "optional A DID Document MAY include a service propertyThe value of the service property should be an array of service endpoint",
+      "optional": true,
+      "title": "The value of the service property should be an array of service endpoint",
+      "pending": false,
+      "state": "passed",
+      "duration": 245,
+      "speed": "slow",
+      "errors": ""
+    },
+    {
+      "fullTitle": "optional A DID Document MAY include a service propertyEach service endpoint must include id, type, and serviceEndpoint properties, and MAY include additional properties",
+      "optional": true,
+      "title": "Each service endpoint must include id, type, and serviceEndpoint properties, and MAY include additional properties",
+      "pending": false,
+      "state": "passed",
+      "duration": 246,
+      "speed": "slow",
+      "errors": ""
+    },
+    {
+      "fullTitle": "optional A DID Document MAY include a service propertyThe value of the serviceEndpoint property MUST be a JSON-LD object or a valid URI",
+      "optional": true,
+      "title": "The value of the serviceEndpoint property MUST be a JSON-LD object or a valid URI",
+      "pending": false,
+      "state": "passed",
+      "duration": 241,
+      "speed": "slow",
+      "errors": ""
     },
     {
       "fullTitle": "optional A DID Document MAY include a publicKey property If a public key does not exist in the DID Document, it MUST be assumed the key has been revoked or is invalid.",
       "optional": true,
       "title": " If a public key does not exist in the DID Document, it MUST be assumed the key has been revoked or is invalid.",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 247,
+      "speed": "slow",
+      "errors": ""
     },
     {
       "fullTitle": "optional A DID Document MAY include a publicKey property A DID Document that contains a revoked key MUST also contain or refer to the revocation information for the key (e.g., a revocation list).",
@@ -231,7 +266,7 @@
       "title": " A DID Document that contains a revoked key MUST also contain or refer to the revocation information for the key (e.g., a revocation list).",
       "pending": false,
       "state": "failed",
-      "duration": 1,
+      "duration": 0,
       "errors": "Not Implemented"
     },
     {
@@ -239,36 +274,40 @@
       "optional": true,
       "title": " The value of the publicKey property MUST be an array of public keys.",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 243,
+      "speed": "slow",
+      "errors": ""
     },
     {
       "fullTitle": "optional A DID Document MAY include a publicKey property Each public key MUST include id and type properties, and exactly one value property. The array of public keys MUST NOT contain duplicate entries with the same id.",
       "optional": true,
       "title": " Each public key MUST include id and type properties, and exactly one value property. The array of public keys MUST NOT contain duplicate entries with the same id.",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 249,
+      "speed": "slow",
+      "errors": ""
     },
     {
       "fullTitle": "optional A DID Document MAY include a publicKey property Each public key MUST include a controller property, which identifies the controller of the corresponding private key.",
       "optional": true,
       "title": " Each public key MUST include a controller property, which identifies the controller of the corresponding private key.",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 244,
+      "speed": "slow",
+      "errors": ""
     },
     {
       "fullTitle": "optional A DID Document MAY include a publicKey property The value property of a public key MUST be exactly one of publicKeyPem, publicKeyJwk, publicKeyHex, publicKeyBase64, publicKeyBase58, publicKeyMultibase, depending on the format and encoding of the public key.",
       "optional": true,
       "title": " The value property of a public key MUST be exactly one of publicKeyPem, publicKeyJwk, publicKeyHex, publicKeyBase64, publicKeyBase58, publicKeyMultibase, depending on the format and encoding of the public key.",
       "pending": false,
-      "state": "failed",
-      "duration": 0,
-      "errors": "Not Implemented"
+      "state": "passed",
+      "duration": 245,
+      "speed": "slow",
+      "errors": ""
     }
   ]
 }

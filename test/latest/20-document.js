@@ -29,7 +29,14 @@ describe('Document', function() {
   });
 
   it('A DID Document MUST have exactly one top-level context statement.', async function() {
-    throw new Error('Not Implemented');
+    let error = null;
+    try {
+      await util.generate('top-level-only.jsonld', generatorOptions);
+    } catch(e) {
+      console.error(e);
+      error = e;
+    }
+    expect(error, 'Expected an Error to be Thrown').to.not.be.null;
   });
   it('The key for this property (context) MUST be @context.', async function() {
     await util.generate('valid.jsonld', generatorOptions);
@@ -38,7 +45,6 @@ describe('Document', function() {
     await util.generate('valid.jsonld', generatorOptions);
   });
   it('Method-specific contexts MUST NOT override the terms defined in the generic DID context.', async function() {
-    // https://w3c-ccg.github.io/did-spec/contexts/did-v1.jsonld
     generatorOptions.args.contexts = '"../../../did-test-suite/test/contexts/base.json ' +
       '../../../did-test-suite/test/contexts/overwrite.json"';
     let error = null;
