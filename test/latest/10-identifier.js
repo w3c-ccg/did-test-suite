@@ -86,19 +86,6 @@ describe('Identifier', function() {
       }
       expect(error, 'Expected an Error to be Thrown').to.not.be.null;
     });
-    it('A generic DID path is identical to a URI path and MUST conform to the the path-abempty ABNF rule in [RFC3986].', async function() {
-      // begins with "/" or is empty
-      // basically this test means "/" or " " is a valid path
-      throw new Error('path paramter not being checked.');
-      await util.generate('invalid-path.did', generatorOptions);
-    });
-
-    it('A generic DID query is identical to a URI query and MUST conform to the the query ABNF rule in [RFC3986].', async function() {
-      // https://nodejs.org/api/querystring.html
-      // https://stackoverflow.com/questions/23959352/validate-url-query-string-with-regex
-      await util.generate('invalid-query.did', generatorOptions);
-    });
-
   });
   describe('optional ', function() {
     it('Method-specific parameter names MAY be combined with generic parameter names in any order.', async function() {

@@ -11,8 +11,8 @@ describe('Document', function() {
       command: 'validate',
       args: {
         document: true,
-        contexts: '../../../did-test-suite/test/contexts/base.json'
-      },
+        contexts: config.baseDIDContext
+      }
     };
   });
 
@@ -103,7 +103,7 @@ describe('Document', function() {
           await util.generate('valid.jsonld', generatorOptions);
         });
         it(' A DID Document that contains a revoked key MUST also contain or refer to the revocation information for the key (e.g., a revocation list).', async function() {
-          throw new Error('Not Implemented');
+          await util.generate('publicKeys-revoked.jsonld', generatorOptions);
         });
         it(' The value of the publicKey property MUST be an array of public keys.', async function() {
           await util.generate('publicKey.jsonld', generatorOptions);
@@ -120,9 +120,6 @@ describe('Document', function() {
       });
       describe(' negative ', function() {
         it(' If a public key does not exist in the DID Document, it MUST be assumed the key has been revoked or is invalid.', async function() {
-          throw new Error('Not Implemented');
-        });
-        it(' A DID Document that contains a revoked key MUST also contain or refer to the revocation information for the key (e.g., a revocation list).', async function() {
           throw new Error('Not Implemented');
         });
         it(' The value of the publicKey property MUST be an array of public keys.', async function() {
