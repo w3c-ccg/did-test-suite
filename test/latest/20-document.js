@@ -132,10 +132,22 @@ describe('Document', function() {
       expect(error, 'Expected an Error to be Thrown').to.not.be.null;
     });
     it(testTitles.mustBeId, async function() {
-      await util.generate('jsonld/valid.jsonld', generatorOptions);
+      let error = null;
+      try {
+        await util.generate('jsonld/no-id.jsonld', generatorOptions);
+      } catch(e) {
+        error = e;
+      }
+      expect(error, 'Expected an Error to be Thrown').to.not.be.null;
     });
     it(testTitles.mustBeDID, async function() {
-      await util.generate('jsonld/valid.jsonld', generatorOptions);
+      let error = null;
+      try {
+        await util.generate('jsonld/invalid-id.jsonld', generatorOptions);
+      } catch(e) {
+        error = e;
+      }
+      expect(error, 'Expected an Error to be Thrown').to.not.be.null;
     });
     it(testTitles.mustContainId, async function() {
       throw new Error('Not Implemented');
