@@ -5,10 +5,10 @@ const methodChar = '[a-z09]';
 
 // method-specific-id = *idchar *( ":" *idchar )
 // idchar = ALPHA / DIGIT / "." / "-" / "_"
-const idChar = '[_\\w\\.\\-:]';
+const idChar = '[\\w\\.\\-:]';
 
 // param-char = ALPHA / DIGIT / "." / "-" / "_" / ":" /
-const paramChar = '[_\\w\\.\\-:]';
+const paramChar = '[\\w\\.\\-:]';
 
 const DIDRegex = new RegExp(`^(?<did>did):(?<methodName>${methodChar}+):(?<methodSpecificId>${idChar}*)(?<extra>[;\\?#\/]*.*)$`, 'i');
 

@@ -33,7 +33,6 @@ describe('Document', function() {
     try {
       await util.generate('top-level-only.jsonld', generatorOptions);
     } catch(e) {
-      console.error(e);
       error = e;
     }
     expect(error, 'Expected an Error to be Thrown').to.not.be.null;
