@@ -14,7 +14,7 @@ describe('Identifier', function() {
       },
     };
   });
-  describe(' positive ', function() {
+  describe(' positive  ', function() {
     it('The did: scheme name MUST be lowercase.', async function() {
       await util.generate('did/valid.did', generatorOptions);
     });
@@ -46,7 +46,7 @@ describe('Identifier', function() {
       await util.generate('did/fragment.did', generatorOptions);
     });
   });
-  describe(' negative ', function() {
+  describe(' negative  ', function() {
     it('The did: scheme name MUST be lowercase.', async function() {
       let error = null;
       try {
@@ -88,7 +88,7 @@ describe('Identifier', function() {
     });
   });
   describe('optional ', function() {
-    it('Method-specific parameter names MAY be combined with generic parameter names in any order.', async function() {
+    it(' Method-specific parameter names MAY be combined with generic parameter names in any order.', async function() {
       await util.generate('did/method-specific-generic-params.did', generatorOptions);
     });
   });
