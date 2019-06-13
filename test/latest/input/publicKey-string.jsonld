@@ -1,0 +1,5 @@
+{
+  "@context": ["https://www.w3.org/2019/did/v1"],
+  "id": "did:uuid:0d2bae3e-4915-489c-bfa1-1ba14e8b43cd",
+  "publicKey": "-----BEGIN PUBLIC KEY...END PUBLIC KEY-----\r\n"
+}
