@@ -141,7 +141,13 @@ describe('Document', function() {
       throw new Error('Not Implemented');
     });
     it(testTitles.mustBeJSON, async function() {
-      await util.generate('jsonld/valid.jsonld', generatorOptions);
+      let error = null;
+      try {
+        await util.generate('jsonld/invalid.txt', generatorOptions);
+      } catch(e) {
+        error = e;
+      }
+      expect(error, 'Expected an Error to be Thrown').to.not.be.null;
     });
   });
 
