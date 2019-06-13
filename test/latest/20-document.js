@@ -98,23 +98,63 @@ describe('Document', function() {
       });
     });
     describe(' A DID Document MAY include a publicKey property ', function() {
-      it(' If a public key does not exist in the DID Document, it MUST be assumed the key has been revoked or is invalid.', async function() {
-        await util.generate('valid.jsonld', generatorOptions);
+      describe(' positive ', function() {
+        it(' If a public key does not exist in the DID Document, it MUST be assumed the key has been revoked or is invalid.', async function() {
+          await util.generate('valid.jsonld', generatorOptions);
+        });
+        it(' A DID Document that contains a revoked key MUST also contain or refer to the revocation information for the key (e.g., a revocation list).', async function() {
+          throw new Error('Not Implemented');
+        });
+        it(' The value of the publicKey property MUST be an array of public keys.', async function() {
+          await util.generate('publicKey.jsonld', generatorOptions);
+        });
+        it(' Each public key MUST include id and type properties, and exactly one value property. The array of public keys MUST NOT contain duplicate entries with the same id.', async function() {
+          await util.generate('publicKey.jsonld', generatorOptions);
+        });
+        it(' Each public key MUST include a controller property, which identifies the controller of the corresponding private key.', async function() {
+          await util.generate('publicKey.jsonld', generatorOptions);
+        });
+        it(' The value property of a public key MUST be exactly one of publicKeyPem, publicKeyJwk, publicKeyHex, publicKeyBase64, publicKeyBase58, publicKeyMultibase, depending on the format and encoding of the public key.', async function() {
+          await util.generate('publicKey.jsonld', generatorOptions);
+        });
       });
-      it(' A DID Document that contains a revoked key MUST also contain or refer to the revocation information for the key (e.g., a revocation list).', async function() {
-        throw new Error('Not Implemented');
-      });
-      it(' The value of the publicKey property MUST be an array of public keys.', async function() {
-        await util.generate('publicKey.jsonld', generatorOptions);
-      });
-      it(' Each public key MUST include id and type properties, and exactly one value property. The array of public keys MUST NOT contain duplicate entries with the same id.', async function() {
-        await util.generate('publicKey.jsonld', generatorOptions);
-      });
-      it(' Each public key MUST include a controller property, which identifies the controller of the corresponding private key.', async function() {
-        await util.generate('publicKey.jsonld', generatorOptions);
-      });
-      it(' The value property of a public key MUST be exactly one of publicKeyPem, publicKeyJwk, publicKeyHex, publicKeyBase64, publicKeyBase58, publicKeyMultibase, depending on the format and encoding of the public key.', async function() {
-        await util.generate('publicKey.jsonld', generatorOptions);
+      describe(' negative ', function() {
+        it(' If a public key does not exist in the DID Document, it MUST be assumed the key has been revoked or is invalid.', async function() {
+          throw new Error('Not Implemented');
+        });
+        it(' A DID Document that contains a revoked key MUST also contain or refer to the revocation information for the key (e.g., a revocation list).', async function() {
+          throw new Error('Not Implemented');
+        });
+        it(' The value of the publicKey property MUST be an array of public keys.', async function() {
+          let error = null;
+          try {
+            await util.generate('publicKey-string.jsonld', generatorOptions);
+          } catch(e) {
+            error = e;
+          }
+          expect(error, 'Expected an Error to be Thrown').to.not.be.null;
+        });
+        it(' Each public key MUST include id and type properties, and exactly one value property. The array of public keys MUST NOT contain duplicate entries with the same id.', async function() {
+          let error = null;
+          try {
+            await util.generate('duplicate-public-key-ids.jsonld', generatorOptions);
+          } catch(e) {
+            error = e;
+          }
+          expect(error, 'Expected an Error to be Thrown').to.not.be.null;
+        });
+        it(' Each public key MUST include a controller property, which identifies the controller of the corresponding private key.', async function() {
+          let error = null;
+          try {
+            await util.generate('publicKeys-no-controller.jsonld', generatorOptions);
+          } catch(e) {
+            error = e;
+          }
+          expect(error, 'Expected an Error to be Thrown').to.not.be.null;
+        });
+        it(' The value property of a public key MUST be exactly one of publicKeyPem, publicKeyJwk, publicKeyHex, publicKeyBase64, publicKeyBase58, publicKeyMultibase, depending on the format and encoding of the public key.', async function() {
+          await util.generate('publicKey.jsonld', generatorOptions);
+        });
       });
     });
   });

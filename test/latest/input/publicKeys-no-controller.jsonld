@@ -2,21 +2,18 @@
   "@context": ["https://www.w3.org/2019/did/v1"],
   "id": "did:uuid:0d2bae3e-4915-489c-bfa1-1ba14e8b43cd",
   "publicKey": [{
-    "controller": "did:example:123456789abcdefghi",
     "id": "did:example:123456789abcdefghi#keys-1",
     "type": "Ed25519VerificationKey2018",
     "owner": "did:example:123456789abcdefghi",
     "publicKeyBase58" : "H3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV"
   },{
-    "id": "did:example:123456789abcdefghi#keys-1",
-    "controller": "did:example:123456789abcdefghi",
+    "id": "did:example:123456789abcdefghi#keys-2",
     "type": "RsaVerificationKey2018",
     "owner": "did:example:123456789abcdefghi",
     "publicKeyPem": "-----BEGIN PUBLIC KEY...END PUBLIC KEY-----\r\n"
   },{
-    "id": "did:example:123456789abcdefghi#keys-1",
+    "id": "did:example:123456789abcdefghi#keys-3",
     "type": "EcdsaSecp256k1VerificationKey2019",
-    "controller": "did:example:123456789abcdefghi",
     "owner": "did:example:123456789abcdefghi",
     "publicKeyHex": "02b97c30de767f084...263d29f1450936b71"
   }]
