@@ -16,7 +16,7 @@ describe('Document', function() {
       }
     };
   });
-  describe(' positive ', function() {
+  describe(' positive  ', function() {
     it(testTitles.firstContext, async function() {
       await util.generate('jsonld/valid.jsonld', generatorOptions);
     });
@@ -56,7 +56,7 @@ describe('Document', function() {
       await util.generate('jsonld/valid.jsonld', generatorOptions);
     });
   });
-  describe(' negative ', function() {
+  describe(' negative  ', function() {
     it(testTitles.firstContext, async function() {
       let error = null;
       try {
@@ -184,7 +184,7 @@ describe('Document', function() {
       });
     });
     describe(' A DID Document MAY include a publicKey property ', function() {
-      describe(' positive ', function() {
+      describe(' positive  ', function() {
         it(' If a public key does not exist in the DID Document, it MUST be assumed the key has been revoked or is invalid.', async function() {
           await util.generate('jsonld/valid.jsonld', generatorOptions);
         });
@@ -204,7 +204,7 @@ describe('Document', function() {
           await util.generate('jsonld/publicKey.jsonld', generatorOptions);
         });
       });
-      describe(' negative ', function() {
+      describe(' negative  ', function() {
         it(' If a public key does not exist in the DID Document, it MUST be assumed the key has been revoked or is invalid.', async function() {
           throw new Error('Not Implemented');
         });

@@ -17,12 +17,13 @@ function ImplementationReporter(runner, options) {
     const fullTitle = test
       .fullTitle()
       .replace(/\s\s/g, '')
-      .replace(parentSuite, '')
-      .trim();
+      .replace(parentSuite, '');
     return {
       fullTitle,
       // just in case the parentSuite contains optional
       optional: /optional/i.test(test.fullTitle()),
+      negative: /negative/i.test(test.fullTitle()),
+      positive: /positive/i.test(test.fullTitle()),
       title: test.title.replace(/\s\s/g, ''),
       pending: test.pending,
       state: test.state,
