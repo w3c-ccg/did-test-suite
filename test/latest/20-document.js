@@ -2,6 +2,7 @@
 const {expect} = require('chai');
 const config = require('../../config.json');
 const util = require('./util');
+const testTitles = require('./documentTitle.json');
 
 describe('Document', function() {
   let generatorOptions = null;
@@ -16,76 +17,74 @@ describe('Document', function() {
     };
   });
   describe(' positive ', function() {
-    it('The value of the @context property MUST be one or more URIs, where the value of the first URI is https://www.w3.org/2019/did/v1.', async function() {
+    it(testTitles.firstContext, async function() {
       await util.generate('jsonld/valid.jsonld', generatorOptions);
     });
-
-    it('If more than one URI is provided, the URIs MUST be interpreted as an ordered set.', async function() {
+    it(testTitles.multipleURIS, async function() {
       await util.generate('jsonld/multiple-contexts.jsonld', generatorOptions);
     });
-    it('DID Documents MUST include the @context property.', async function() {
+    it(testTitles.mustHaveContext, async function() {
       await util.generate('jsonld/valid.jsonld', generatorOptions);
     });
-    it('A DID Document MUST have exactly one top-level context statement.', async function() {
-      let error = null;
-      try {
-        await util.generate('jsonld/top-level-only.jsonld', generatorOptions);
-      } catch(e) {
-        error = e;
-      }
-      expect(error, 'Expected an Error to be Thrown').to.not.be.null;
-    });
-    it('The key for this property (context) MUST be @context.', async function() {
+    it(testTitles.oneContext, async function() {
       await util.generate('jsonld/valid.jsonld', generatorOptions);
     });
-    it('The value of this key MUST be at least the URL for the generic DID context: https://www.w3.org/2019/did/v1.', async function() {
+    it(testTitles.keyContext, async function() {
       await util.generate('jsonld/valid.jsonld', generatorOptions);
     });
-    it('Method-specific contexts MUST NOT override the terms defined in the generic DID context.', async function() {
+    it(testTitles.firstURIMustBe, async function() {
+      await util.generate('jsonld/valid.jsonld', generatorOptions);
+    });
+    it(testTitles.methodContextNoOverride, async function() {
       generatorOptions.args.contexts = '"../../../did-test-suite/test/contexts/base.json ' +
-        '../../../did-test-suite/test/contexts/overwrite.json"';
-      let error = null;
-      try {
-        await util.generate('jsonld/overwrite-parent-context.jsonld', generatorOptions);
-      } catch(e) {
-        error = e;
-      }
-      expect(error, 'Expected an Error to be Thrown').to.not.be.null;
+        '../../../did-test-suite/test/contexts/no-overwrite.json"';
+      await util.generate('jsonld/overwrite-parent-context.jsonld', generatorOptions);
     });
-    it('A DID Document MUST have exactly one DID subject.', async function() {
-      let error = null;
-      try {
-        await util.generate('jsonld/multiple-dids.jsonld', generatorOptions);
-      } catch(e) {
-        error = e;
-      }
-      expect(error, 'Expected an Error to be Thrown').to.not.be.null;
-    });
-    it('The key for this property MUST be id.', async function() {
+    it(testTitles.oneSubject, async function() {
       await util.generate('jsonld/valid.jsonld', generatorOptions);
     });
-    it('The value of this key MUST be a valid DID.', async function() {
+    it(testTitles.mustBeId, async function() {
       await util.generate('jsonld/valid.jsonld', generatorOptions);
     });
-    it('However, the fully resolved DID Document MUST contain a valid id property.', async function() {
+    it(testTitles.mustBeDID, async function() {
+      await util.generate('jsonld/valid.jsonld', generatorOptions);
+    });
+    it(testTitles.mustContainId, async function() {
       throw new Error('Not Implemented');
     });
-    it('A DID Document MUST be a single JSON object conforming to [RFC8259].', async function() {
+    it(testTitles.mustBeJSON, async function() {
       await util.generate('jsonld/valid.jsonld', generatorOptions);
     });
   });
   describe(' negative ', function() {
-    it('The value of the @context property MUST be one or more URIs, where the value of the first URI is https://www.w3.org/2019/did/v1.', async function() {
-      await util.generate('jsonld/valid.jsonld', generatorOptions);
+    it(testTitles.firstContext, async function() {
+      let error = null;
+      try {
+        await util.generate('jsonld/bad-order.jsonld', generatorOptions);
+      } catch(e) {
+        error = e;
+      }
+      expect(error, 'Expected an Error to be Thrown').to.not.be.null;
     });
-
-    it('If more than one URI is provided, the URIs MUST be interpreted as an ordered set.', async function() {
-      await util.generate('jsonld/multiple-contexts.jsonld', generatorOptions);
+    it(testTitles.multipleURIS, async function() {
+      let error = null;
+      try {
+        await util.generate('jsonld/bad-order.jsonld', generatorOptions);
+      } catch(e) {
+        error = e;
+      }
+      expect(error, 'Expected an Error to be Thrown').to.not.be.null;
     });
-    it('DID Documents MUST include the @context property.', async function() {
-      await util.generate('jsonld/valid.jsonld', generatorOptions);
+    it(testTitles.mustHaveContext, async function() {
+      let error = null;
+      try {
+        await util.generate('jsonld/no-context.jsonld', generatorOptions);
+      } catch(e) {
+        error = e;
+      }
+      expect(error, 'Expected an Error to be Thrown').to.not.be.null;
     });
-    it('A DID Document MUST have exactly one top-level context statement.', async function() {
+    it(testTitles.oneContext, async function() {
       let error = null;
       try {
         await util.generate('jsonld/top-level-only.jsonld', generatorOptions);
@@ -94,13 +93,25 @@ describe('Document', function() {
       }
       expect(error, 'Expected an Error to be Thrown').to.not.be.null;
     });
-    it('The key for this property (context) MUST be @context.', async function() {
-      await util.generate('jsonld/valid.jsonld', generatorOptions);
+    it(testTitles.keyContext, async function() {
+      let error = null;
+      try {
+        await util.generate('jsonld/no-context.jsonld', generatorOptions);
+      } catch(e) {
+        error = e;
+      }
+      expect(error, 'Expected an Error to be Thrown').to.not.be.null;
     });
-    it('The value of this key MUST be at least the URL for the generic DID context: https://www.w3.org/2019/did/v1.', async function() {
-      await util.generate('jsonld/valid.jsonld', generatorOptions);
+    it(testTitles.firstURIMustBe, async function() {
+      let error = null;
+      try {
+        await util.generate('jsonld/context-not-a-url.jsonld', generatorOptions);
+      } catch(e) {
+        error = e;
+      }
+      expect(error, 'Expected an Error to be Thrown').to.not.be.null;
     });
-    it('Method-specific contexts MUST NOT override the terms defined in the generic DID context.', async function() {
+    it(testTitles.methodContextNoOverride, async function() {
       generatorOptions.args.contexts = '"../../../did-test-suite/test/contexts/base.json ' +
         '../../../did-test-suite/test/contexts/overwrite.json"';
       let error = null;
@@ -111,7 +122,7 @@ describe('Document', function() {
       }
       expect(error, 'Expected an Error to be Thrown').to.not.be.null;
     });
-    it('A DID Document MUST have exactly one DID subject.', async function() {
+    it(testTitles.oneSubject, async function() {
       let error = null;
       try {
         await util.generate('jsonld/multiple-dids.jsonld', generatorOptions);
@@ -120,16 +131,16 @@ describe('Document', function() {
       }
       expect(error, 'Expected an Error to be Thrown').to.not.be.null;
     });
-    it('The key for this property MUST be id.', async function() {
+    it(testTitles.mustBeId, async function() {
       await util.generate('jsonld/valid.jsonld', generatorOptions);
     });
-    it('The value of this key MUST be a valid DID.', async function() {
+    it(testTitles.mustBeDID, async function() {
       await util.generate('jsonld/valid.jsonld', generatorOptions);
     });
-    it('However, the fully resolved DID Document MUST contain a valid id property.', async function() {
+    it(testTitles.mustContainId, async function() {
       throw new Error('Not Implemented');
     });
-    it('A DID Document MUST be a single JSON object conforming to [RFC8259].', async function() {
+    it(testTitles.mustBeJSON, async function() {
       await util.generate('jsonld/valid.jsonld', generatorOptions);
     });
   });
