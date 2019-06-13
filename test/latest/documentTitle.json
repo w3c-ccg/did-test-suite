@@ -1,0 +1,14 @@
+{
+  "firstContext": "The value of the @context property MUST be one or more URIs, where the value of the first URI is https://www.w3.org/2019/did/v1.",
+  "multipleURIS": "If more than one URI is provided, the URIs MUST be interpreted as an ordered set.",
+  "mustHaveContext": "DID Documents MUST include the @context property.",
+  "oneContext": "A DID Document MUST have exactly one top-level context statement.",
+  "keyContext": "The key for this property (context) MUST be @context.",
+  "firstURIMustBe": "The value of this key MUST be at least the URL for the generic DID context: https://www.w3.org/2019/did/v1.",
+  "methodContextNoOverride": "Method-specific contexts MUST NOT override the terms defined in the generic DID context.",
+  "oneSubject": "A DID Document MUST have exactly one DID subject.",
+  "mustBeId": "The key for this property MUST be id.",
+  "mustBeDID": "The value of this key MUST be a valid DID.",
+  "mustContainId": "However, the fully resolved DID Document MUST contain a valid id property.",
+  "mustBeJSON": "A DID Document MUST be a single JSON object conforming to [RFC8259]."
+}
