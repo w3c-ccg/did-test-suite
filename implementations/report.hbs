@@ -24,7 +24,7 @@
             <tbody>
         {{#each this}}
           <tr>
-            <td class="subtest {{getOptionalTitle @key}}">{{@key}}</td>
+            <td class="subtest {{getOptionalTitle @key}} {{getRowColor @key}}">{{@key}}</td>
             {{#each this}}
               <td
                 class="{{state}} {{getOptional optional}}">
