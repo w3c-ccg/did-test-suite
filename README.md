@@ -29,7 +29,7 @@ Commands:
 --did is used for validating identifiers.
 --document is used for validating documents
 --contexts is a list of paths to jsonld contexts used in the tests.
---document will need to accept the document being tested via stdin.
+Both did and document accept the tested object via stdin.
 
 All tests will run against your binary and assume that an exit code greater than 0 represents an error.
 
