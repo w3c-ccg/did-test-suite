@@ -21,7 +21,10 @@ Options:
   -h, --help                             output usage information
 
 Commands:
-  validate? // TODO commands
+  validate 
+    --did true|false
+    --document true|false
+    --contexts [path-to-context]
 ```
 All tests will run against your binary and assume that an exit code greater than 0 represents an error.
 
