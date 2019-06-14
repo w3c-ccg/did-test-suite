@@ -34,11 +34,11 @@ Handlebars.registerHelper(
 
 Handlebars.registerHelper(
   'getRowColor',
-  (negative, positive) => {
-    if(negative) {
+  title => {
+    if(/negative/i.test(title)) {
       return 'negative';
     }
-    if(positive) {
+    if(/positive/i.test(title)) {
       return 'positive';
     }
     return '';
