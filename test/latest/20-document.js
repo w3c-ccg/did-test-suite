@@ -51,7 +51,7 @@ describe('Document', function() {
       await util.generate('jsonld/valid.jsonld', generatorOptions);
     });
     it(testTitles.mustContainId, async function() {
-      throw new Error('Not Implemented');
+      await util.generate('jsonld/valid.jsonld', generatorOptions);
     });
     it(testTitles.mustBeJSON, async function() {
       await util.generate('jsonld/valid.jsonld', generatorOptions);
@@ -154,7 +154,13 @@ describe('Document', function() {
       expect(error, 'Expected an Error to be Thrown').to.not.be.null;
     });
     it(testTitles.mustContainId, async function() {
-      throw new Error('Not Implemented');
+      let error = null;
+      try {
+        await util.generate('jsonld/no-id.jsonld', generatorOptions);
+      } catch(e) {
+        error = e;
+      }
+      expect(error, 'Expected an Error to be Thrown').to.not.be.null;
     });
     it(testTitles.mustBeJSON, async function() {
       let error = null;
@@ -189,9 +195,6 @@ describe('Document', function() {
     });
     describe(testTitles.mayHavePublicKey, function() {
       describe(testTitles.positive, function() {
-        it(testTitles.noKeyThenAssumeRevoked, async function() {
-          await util.generate('jsonld/valid.jsonld', generatorOptions);
-        });
         it(testTitles.mustHaveRevokedProp, async function() {
           await util.generate(
             'jsonld/publicKeys-revoked.jsonld', generatorOptions);
@@ -210,9 +213,6 @@ describe('Document', function() {
         });
       });
       describe(testTitles.negative, function() {
-        it(testTitles.noKeyThenAssumeRevoked, async function() {
-          throw new Error('Not Implemented');
-        });
         it(testTitles.mustBeArrayOfKeys, async function() {
           let error = null;
           try {
