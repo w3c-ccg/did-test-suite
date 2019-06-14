@@ -26,6 +26,11 @@ Commands:
     --document true|false
     --contexts [path-to-context]
 ```
+--did is used for validating identifiers.
+--document is used for validating documents
+--contexts is a list of paths to jsonld contexts used in the tests.
+--document will need to accept the document being tested via stdin.
+
 All tests will run against your binary and assume that an exit code greater than 0 represents an error.
 
 ### Creating a Config File
