@@ -34,8 +34,10 @@ An example local configuration for the test suite. To use:
 ```
 {
   "generator": "../your-application/bin",
+  "baseDIDContext": "../path/to/base/context/did.json"
 }
 ```
+baseDIDContext is the path to the test suite's test/contexts/base.json file.
 
 ### Running the Test Suite
 
