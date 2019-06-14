@@ -172,15 +172,11 @@
                 </style>
                 <thead>
                   <th width="80%">Test</th>
-                      <th>empty</th>
                       <th>node</th>
                 </thead>
                 <tbody>
               <tr>
                 <td class="subtest not-optional positive">positiveThe did: scheme name MUST be lowercase.</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
                   <td
                     class="passed not-optional">
                     ✓</td>
@@ -190,15 +186,9 @@
                   <td
                     class="passed not-optional">
                     ✓</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional positive">positiveA DID method specification MUST further restrict the generic DID syntax by defining its own method-name and its own method-specific-id syntax.</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
                   <td
                     class="passed not-optional">
                     ✓</td>
@@ -208,15 +198,9 @@
                   <td
                     class="passed not-optional">
                     ✓</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional positive">positiveA generic DID path is identical to a URI path and MUST conform to the the path-abempty ABNF rule in [RFC3986].</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
                   <td
                     class="passed not-optional">
                     ✓</td>
@@ -226,15 +210,9 @@
                   <td
                     class="passed not-optional">
                     ✓</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional positive">positiveA generic DID fragment is identical to a URI fragment and MUST conform to the the fragment ABNF rule in [RFC3986]</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
                   <td
                     class="passed not-optional">
                     ✓</td>
@@ -244,15 +222,9 @@
                   <td
                     class="passed not-optional">
                     ✓</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional negative">negative(did) The method name MUST be lowercase.</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
                   <td
                     class="passed not-optional">
                     ✓</td>
@@ -262,24 +234,15 @@
                   <td
                     class="passed not-optional">
                     ✓</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional negative">negativeA method-specific parameter name MUST be prefixed by the method name as defined by the method-name rule.</td>
                   <td
                     class="passed not-optional">
                     ✓</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest optional ">optional Method-specific parameter names MAY be combined with generic parameter names in any order.</td>
-                  <td
-                    class="passed optional">
-                    ✓</td>
                   <td
                     class="passed optional">
                     ✓</td>
@@ -300,15 +263,11 @@
                 </style>
                 <thead>
                   <th width="80%">Test</th>
-                      <th>empty</th>
                       <th>node</th>
                 </thead>
                 <tbody>
               <tr>
                 <td class="subtest not-optional positive">positiveThe value of the @context property MUST be one or more URIs, where the value of the first URI is https://www.w3.org/2019/did/v1.</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
                   <td
                     class="passed not-optional">
                     ✓</td>
@@ -318,15 +277,9 @@
                   <td
                     class="passed not-optional">
                     ✓</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional positive">positiveDID Documents MUST include the @context property.</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
                   <td
                     class="passed not-optional">
                     ✓</td>
@@ -336,15 +289,9 @@
                   <td
                     class="passed not-optional">
                     ✓</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional positive">positiveThe key for this property (context) MUST be @context.</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
                   <td
                     class="passed not-optional">
                     ✓</td>
@@ -354,15 +301,9 @@
                   <td
                     class="passed not-optional">
                     ✓</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional positive">positiveMethod-specific contexts MUST NOT override the terms defined in the generic DID context.</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
                   <td
                     class="passed not-optional">
                     ✓</td>
@@ -372,15 +313,9 @@
                   <td
                     class="passed not-optional">
                     ✓</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional positive">positiveThe key for this property MUST be id.</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
                   <td
                     class="passed not-optional">
                     ✓</td>
@@ -390,15 +325,9 @@
                   <td
                     class="passed not-optional">
                     ✓</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional positive">positiveHowever, the fully resolved DID Document MUST contain a valid id property.</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
                   <td
                     class="passed not-optional">
                     ✓</td>
@@ -408,15 +337,9 @@
                   <td
                     class="passed not-optional">
                     ✓</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional negative">negativeThe value of the @context property MUST be one or more URIs, where the value of the first URI is https://www.w3.org/2019/did/v1.</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
                   <td
                     class="passed not-optional">
                     ✓</td>
@@ -426,15 +349,9 @@
                   <td
                     class="passed not-optional">
                     ✓</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional negative">negativeDID Documents MUST include the @context property.</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
                   <td
                     class="passed not-optional">
                     ✓</td>
@@ -444,15 +361,9 @@
                   <td
                     class="passed not-optional">
                     ✓</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional negative">negativeThe key for this property (context) MUST be @context.</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
                   <td
                     class="passed not-optional">
                     ✓</td>
@@ -462,15 +373,9 @@
                   <td
                     class="passed not-optional">
                     ✓</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional negative">negativeMethod-specific contexts MUST NOT override the terms defined in the generic DID context.</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
                   <td
                     class="passed not-optional">
                     ✓</td>
@@ -480,15 +385,9 @@
                   <td
                     class="passed not-optional">
                     ✓</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional negative">negativeThe key for this property MUST be id.</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
                   <td
                     class="passed not-optional">
                     ✓</td>
@@ -498,15 +397,9 @@
                   <td
                     class="passed not-optional">
                     ✓</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest not-optional negative">negativeHowever, the fully resolved DID Document MUST contain a valid id property.</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
                   <td
                     class="passed not-optional">
                     ✓</td>
@@ -516,15 +409,9 @@
                   <td
                     class="passed not-optional">
                     ✓</td>
-                  <td
-                    class="passed not-optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest optional ">optional A DID Document MAY include an authentication propertyThe value of the authentication property should be an array of verification methods</td>
-                  <td
-                    class="passed optional">
-                    ✓</td>
                   <td
                     class="passed optional">
                     ✓</td>
@@ -534,15 +421,9 @@
                   <td
                     class="passed optional">
                     ✓</td>
-                  <td
-                    class="passed optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest optional ">optionalA DID Document MAY include a service property The value of the service property should be an array of service endpoint</td>
-                  <td
-                    class="passed optional">
-                    ✓</td>
                   <td
                     class="passed optional">
                     ✓</td>
@@ -552,15 +433,9 @@
                   <td
                     class="passed optional">
                     ✓</td>
-                  <td
-                    class="passed optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest optional ">optionalA DID Document MAY include a service property The value of the serviceEndpoint property MUST be a JSON-LD object or a valid URI</td>
-                  <td
-                    class="passed optional">
-                    ✓</td>
                   <td
                     class="passed optional">
                     ✓</td>
@@ -570,15 +445,9 @@
                   <td
                     class="passed optional">
                     ✓</td>
-                  <td
-                    class="passed optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest optional positive">optional A DID Document MAY include a publicKey property positive The value of the publicKey property MUST be an array of public keys.</td>
-                  <td
-                    class="passed optional">
-                    ✓</td>
                   <td
                     class="passed optional">
                     ✓</td>
@@ -588,15 +457,9 @@
                   <td
                     class="passed optional">
                     ✓</td>
-                  <td
-                    class="passed optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest optional positive">optional A DID Document MAY include a publicKey property positive Each public key MUST include a controller property, which identifies the controller of the corresponding private key.</td>
-                  <td
-                    class="passed optional">
-                    ✓</td>
                   <td
                     class="passed optional">
                     ✓</td>
@@ -606,15 +469,9 @@
                   <td
                     class="passed optional">
                     ✓</td>
-                  <td
-                    class="passed optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest optional negative">optional A DID Document MAY include a publicKey property negative The value of the publicKey property MUST be an array of public keys.</td>
-                  <td
-                    class="passed optional">
-                    ✓</td>
                   <td
                     class="passed optional">
                     ✓</td>
@@ -624,24 +481,15 @@
                   <td
                     class="passed optional">
                     ✓</td>
-                  <td
-                    class="passed optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest optional negative">optional A DID Document MAY include a publicKey property negative Each public key MUST include a controller property, which identifies the controller of the corresponding private key.</td>
                   <td
                     class="passed optional">
                     ✓</td>
-                  <td
-                    class="passed optional">
-                    ✓</td>
               </tr>
               <tr>
                 <td class="subtest optional negative">optional A DID Document MAY include a publicKey property negative The value property of a public key MUST be exactly one of publicKeyPem, publicKeyJwk, publicKeyHex, publicKeyBase64, publicKeyBase58, publicKeyMultibase, depending on the format and encoding of the public key.</td>
-                  <td
-                    class="passed optional">
-                    ✓</td>
                   <td
                     class="passed optional">
                     ✓</td>
