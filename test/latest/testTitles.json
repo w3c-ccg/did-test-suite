@@ -27,5 +27,13 @@
   "mustBeArrayOfKeys": " The value of the publicKey property MUST be an array of public keys.",
   "keyMustHaveTypeAndUniqueId": " Each public key MUST include id and type properties, and exactly one value property. The array of public keys MUST NOT contain duplicate entries with the same id.",
   "keyMustHaveController": " Each public key MUST include a controller property, which identifies the controller of the corresponding private key.",
-  "keyMustHaveKeyMaterialType": " The value property of a public key MUST be exactly one of publicKeyPem, publicKeyJwk, publicKeyHex, publicKeyBase64, publicKeyBase58, publicKeyMultibase, depending on the format and encoding of the public key."
+  "keyMustHaveKeyMaterialType": " The value property of a public key MUST be exactly one of publicKeyPem, publicKeyJwk, publicKeyHex, publicKeyBase64, publicKeyBase58, publicKeyMultibase, depending on the format and encoding of the public key.",
+  "schemeMUSTlowercase": "The did: scheme name MUST be lowercase.",
+  "methodMUSTlowercase": "(did) The method name MUST be lowercase.",
+  "mustDefineMethodNameAndId": "A DID method specification MUST further restrict the generic DID syntax by defining its own method-name and its own method-specific-id syntax.",
+  "methodSpecificParam": "A method-specific parameter name MUST be prefixed by the method name as defined by the method-name rule.",
+  "MUSTBeURIPath": "A generic DID path is identical to a URI path and MUST conform to the the path-abempty ABNF rule in [RFC3986].",
+  "MUSTbeURIQuery": "A generic DID query is identical to a URI query and MUST conform to the the query ABNF rule in [RFC3986].",
+  "MUSTbeURIFragment": "A generic DID fragment is identical to a URI fragment and MUST conform to the the fragment ABNF rule in [RFC3986]",
+  "MAYCombineParams": " Method-specific parameter names MAY be combined with generic parameter names in any order."
 }
