@@ -1,8 +1,7 @@
-/* eslint-disable max-len */
 const {expect} = require('chai');
 const config = require('../../config.json');
 const util = require('./util');
-const testTitles = require('./documentTitle.json');
+const testTitles = require('./testTitles.json');
 
 describe('Document', function() {
   let generatorOptions = null;
@@ -36,9 +35,11 @@ describe('Document', function() {
       await util.generate('jsonld/valid.jsonld', generatorOptions);
     });
     it(testTitles.methodContextNoOverride, async function() {
-      generatorOptions.args.contexts = '"../../../did-test-suite/test/contexts/base.json ' +
+      generatorOptions.args.contexts =
+        '"../../../did-test-suite/test/contexts/base.json ' +
         '../../../did-test-suite/test/contexts/no-overwrite.json"';
-      await util.generate('jsonld/overwrite-parent-context.jsonld', generatorOptions);
+      await util.generate(
+        'jsonld/overwrite-parent-context.jsonld', generatorOptions);
     });
     it(testTitles.oneSubject, async function() {
       await util.generate('jsonld/valid.jsonld', generatorOptions);
@@ -105,18 +106,21 @@ describe('Document', function() {
     it(testTitles.firstURIMustBe, async function() {
       let error = null;
       try {
-        await util.generate('jsonld/context-not-a-url.jsonld', generatorOptions);
+        await util.generate(
+          'jsonld/context-not-a-url.jsonld', generatorOptions);
       } catch(e) {
         error = e;
       }
       expect(error, 'Expected an Error to be Thrown').to.not.be.null;
     });
     it(testTitles.methodContextNoOverride, async function() {
-      generatorOptions.args.contexts = '"../../../did-test-suite/test/contexts/base.json ' +
+      generatorOptions.args.contexts =
+        '"../../../did-test-suite/test/contexts/base.json ' +
         '../../../did-test-suite/test/contexts/overwrite.json"';
       let error = null;
       try {
-        await util.generate('jsonld/overwrite-parent-context.jsonld', generatorOptions);
+        await util.generate(
+          'jsonld/overwrite-parent-context.jsonld', generatorOptions);
       } catch(e) {
         error = e;
       }
@@ -189,7 +193,8 @@ describe('Document', function() {
           await util.generate('jsonld/valid.jsonld', generatorOptions);
         });
         it(testTitles.mustHaveRevokedProp, async function() {
-          await util.generate('jsonld/publicKeys-revoked.jsonld', generatorOptions);
+          await util.generate(
+            'jsonld/publicKeys-revoked.jsonld', generatorOptions);
         });
         it(testTitles.mustBeArrayOfKeys, async function() {
           await util.generate('jsonld/publicKey.jsonld', generatorOptions);
@@ -211,7 +216,8 @@ describe('Document', function() {
         it(testTitles.mustBeArrayOfKeys, async function() {
           let error = null;
           try {
-            await util.generate('jsonld/publicKey-string.jsonld', generatorOptions);
+            await util.generate(
+              'jsonld/publicKey-string.jsonld', generatorOptions);
           } catch(e) {
             error = e;
           }
@@ -220,7 +226,8 @@ describe('Document', function() {
         it(testTitles.keyMustHaveTypeAndUniqueId, async function() {
           let error = null;
           try {
-            await util.generate('jsonld/duplicate-public-key-ids.jsonld', generatorOptions);
+            await util.generate(
+              'jsonld/duplicate-public-key-ids.jsonld', generatorOptions);
           } catch(e) {
             error = e;
           }
@@ -229,7 +236,8 @@ describe('Document', function() {
         it(testTitles.keyMustHaveController, async function() {
           let error = null;
           try {
-            await util.generate('jsonld/publicKeys-no-controller.jsonld', generatorOptions);
+            await util.generate(
+              'jsonld/publicKeys-no-controller.jsonld', generatorOptions);
           } catch(e) {
             error = e;
           }
