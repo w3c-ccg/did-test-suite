@@ -1,4 +1,7 @@
 {
+  "positive": " positive ",
+  "negative": " negative ",
+  "optional": " optional ",
   "firstContext": "The value of the @context property MUST be one or more URIs, where the value of the first URI is https://www.w3.org/2019/did/v1.",
   "multipleURIS": "If more than one URI is provided, the URIs MUST be interpreted as an ordered set.",
   "mustHaveContext": "DID Documents MUST include the @context property.",
@@ -10,5 +13,19 @@
   "mustBeId": "The key for this property MUST be id.",
   "mustBeDID": "The value of this key MUST be a valid DID.",
   "mustContainId": "However, the fully resolved DID Document MUST contain a valid id property.",
-  "mustBeJSON": "A DID Document MUST be a single JSON object conforming to [RFC8259]."
+  "mustBeJSON": "A DID Document MUST be a single JSON object conforming to [RFC8259].",
+  "mayHaveAuth": " A DID Document MAY include an authentication property ",
+  "shouldBeAuthMethods": "The value of the authentication property should be an array of verification methods",
+  "verificationEmbedRef": "Each verification method MAY be embedded or referenced",
+  "mayHaveService": "A DID Document MAY include a service property",
+  "serviceIsArray": "The value of the service property should be an array of service endpoint",
+  "mustHaveIdTypeEndpoint": "Each service endpoint must include id, type, and serviceEndpoint properties, and MAY include additional properties",
+  "serviceMustBeJSON": "The value of the serviceEndpoint property MUST be a JSON-LD object or a valid URI",
+  "mayHavePublicKey": " A DID Document MAY include a publicKey property ",
+  "noKeyThenAssumeRevoked": " If a public key does not exist in the DID Document, it MUST be assumed the key has been revoked or is invalid.",
+  "mustHaveRevokedProp": " A DID Document that contains a revoked key MUST also contain or refer to the revocation information for the key (e.g., a revocation list).",
+  "mustBeArrayOfKeys": " The value of the publicKey property MUST be an array of public keys.",
+  "keyMustHaveTypeAndUniqueId": " Each public key MUST include id and type properties, and exactly one value property. The array of public keys MUST NOT contain duplicate entries with the same id.",
+  "keyMustHaveController": " Each public key MUST include a controller property, which identifies the controller of the corresponding private key.",
+  "keyMustHaveKeyMaterialType": " The value property of a public key MUST be exactly one of publicKeyPem, publicKeyJwk, publicKeyHex, publicKeyBase64, publicKeyBase58, publicKeyMultibase, depending on the format and encoding of the public key."
 }
