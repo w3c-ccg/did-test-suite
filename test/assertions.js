@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 
 // method-char = %x61-7A / DIGIT
-const methodChar = '[a-z09]';
+const methodChar = '[a-z0-9]';
 
 // method-specific-id = *idchar *( ":" *idchar )
 // idchar = ALPHA / DIGIT / "." / "-" / "_"
